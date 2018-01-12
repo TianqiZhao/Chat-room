@@ -14,7 +14,7 @@ function populateList() {
                    author = "You";
                }
 		       inner.append('<p id="'+id+'" class="message user-'+author+'">'
-										+'<span class="msg-block"><strong>'+author+'</strong> <span class="time">- '+date.toDateString()
+										+'<span class="msg-block"><strong class="author">'+author+'</strong> <span class="time">- '+date.toDateString()
 										+"--" +date.getHours()
 										+":" +date.getMinutes()
 										+'</span>'
@@ -37,7 +37,7 @@ $(document).ready(function(){
     var socket = io.connect();
     var me = $("#userInfo").attr("value");
 	
-	var msg_template = '<p><span class="msg-block"><strong></strong><span class="time"></span><span class="msg"></span></span></p>';
+	var msg_template = '<p><span class="msg-block"><strong class="author"></strong><span class="time"></span><span class="msg"></span></span></p>';
 	
 	$('.chat-message button').click(function(){
 		var input = $(this).siblings('span').children('input[type=text]');		
@@ -76,8 +76,8 @@ $(document).ready(function(){
          if ($("#userInfo").attr("value") == data.message.author.username) {
              author = "You";
          }
-		 inner.append('<p id="'+id+'" class="user-'+author+'">'
-							+'<span class="msg-block"><strong>'+author+'</strong> <span class="time">- '+date.toDateString()
+		 inner.append('<p id="'+id+'" class="message user-'+author+'">'
+							+'<span class="msg-block"><strong class="author">'+author+'</strong> <span class="time">- '+date.toDateString()
 							+"--" +date.getHours()
 							+":" +date.getMinutes()
 							+'</span>'

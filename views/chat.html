@@ -11,9 +11,6 @@
 {% endblock %}
 
 {% block content %}
-<div>
-    <h2 id="userInfo" name="{{userId}}" value="{{username}}">Welcome {{ username }}!</h2>
-</div>
 <div class="container-fluid">
 <div class="row-fluid">
     <div class="span12">
@@ -21,7 +18,7 @@
         	<div class="widget-title">
                 <div>
                     &nbsp;&nbsp;&nbsp;
-                    <h5>Chat room </h5>
+                    <p id="userInfo" name="{{userId}}" value="{{username}}">Welcome {{ username }}!</p>
                 </div>
         	</div>
         	<div class="widget-content">
@@ -30,9 +27,9 @@
         				<div id="chat-messages-inner"></div>
         		   </div>
         		   <div class="chat-message well">
-        				<button class="btn btn-success">Send</button>
+        				<button class="btn btn-lg btn-success">Send</button>
         				<span class="input-box">
-        					<input type="text" name="msg-box" id="msg-box" />
+        					<input type="text" name="msg-box" id="msg-box" placeholder="Type your message here..."/>
         				</span>
         		   </div>
         		</div>
