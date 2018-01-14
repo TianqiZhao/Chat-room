@@ -100,8 +100,6 @@ router.get('/all-messages', mid.requiresLogin, function(req, res, next) {
   Message.find({})
     .populate('author')
     .exec(function(err, messages) {
-
-        //res.send(messageList);
         res.send(messages);
     });
 });
@@ -118,7 +116,5 @@ router.get('/logout', function (req, res, next) {
     });
   }
 });
-
-
 
 module.exports = router;

@@ -9,11 +9,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var session = require('express-session');
 var connectMongo = require('connect-mongo')(session);
-//var nodemon = require('nodemon');
 var swig = require('swig');
-//var swig = new swig.Swig();
-//var socketEvents = require('./socketEvents'),
-
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -60,7 +56,6 @@ app.set("port", 8080);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
-//app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
