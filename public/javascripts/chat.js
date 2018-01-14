@@ -1,13 +1,10 @@
 function populateList() {
     $.get("/all-messages").done(function(data) {
-          //var list = $("#blogs_list");
           var inner = $('#chat-messages-inner');
 
-          //getUpdates();
           for (var i = 0; i < data.length; i++) {
-              var message = data[i];
-              //console.log(message.createdAt);
-              var date = new Date(message.createdAt);
+               var message = data[i];
+               var date = new Date(message.createdAt);
                var id = 'msg-'+message._id;
                var author = message.author.username.replace(' ','-');
                if ($("#userInfo").attr("value") == message.author.username) {
@@ -36,8 +33,6 @@ $(document).ready(function(){
 
     var socket = io.connect();
     var me = $("#userInfo").attr("value");
-	
-	var msg_template = '<p><span class="msg-block"><strong class="author"></strong><span class="time"></span><span class="msg"></span></span></p>';
 	
 	$('.chat-message button').click(function(){
 		var input = $(this).siblings('span').children('input[type=text]');		
